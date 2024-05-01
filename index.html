@@ -19,13 +19,13 @@
         margin: auto;
         height: 70vh;
         display: flex;
+        margin-top: 50px;
         border-radius: 20px 20px 200px 200px;
         box-shadow: 0 0 20px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0,0.24);
-        margin-top: 50px;
         background-image: linear-gradient(200deg,blueviolet,aqua);
         justify-content: center;
-        align-items: center;
         flex-direction: column;
+        align-items: center;
         }
         h1 {
             font-size: 2rem;
@@ -33,11 +33,11 @@
             text-align: center;
         }
         p {
-            font-size: 1.5rem;
-            font-weight: 400;
-            text-align: center;
-            margin-top: 1rem;
             color: #fff;
+            margin-top: 1rem;
+            font-weight: 400;
+            font-size: 1.5rem;
+            text-align: center;
        }
     </style>
 </head>
@@ -47,17 +47,7 @@
         <p id="password"></p>
     </div>
     <script>
-        // var password = "";
-        // var length = 8;
-        // var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-        // var charactersLength = characters.length;
-        // for ( var i = 0; i < length; i++ ) {
-        //     password += characters.charAt(Math.floor(Math.random() * charactersLength));
-        // }
-        // document.getElementById("password").innerHTML = password;
-
-        // other way
-        
+        // -----------FMnaizi-------------
         function generatePassword(length, includeUppercase, includeLowercase, includeNumber, includeSymbols) {
             const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
@@ -84,7 +74,7 @@
             document.getElementById("password").innerHTML = password;
             return password;
         }
-        // var password = generatePassword(8, true, true, true, true);
+        // var password = generatePassword(12, true, true, true, true);
         const passwordLength = 12;
         const includeUppercase = true;
         const includeLowercase = true;
