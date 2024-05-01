@@ -19,24 +19,24 @@
             margin: auto;
             height: 70vh;
             display: flex;
+            margin-top: 10px;
             border-radius: 20px 20px 200px 200px;
             box-shadow: 0 0 20px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0,0.24);
-            margin-top: 50px;
             background-image: linear-gradient(200deg,blueviolet,aqua);
             justify-content: center;
-            align-items: center;
             flex-direction: column;
+            align-items: center;
         }
         #myBtn{
-            margin-top: 1rem;
-            background-color: #fefefe;
             border: none;
-            border-radius: 20px;
             padding: 10px;
             font-size: 1rem;
+            margin-top: 1rem;
+            border-radius: 20px;
+            background-color: #fefefe;
             font-weight: 700;
-            color: #000;
             cursor: pointer;
+            color: #000;
         }
         h1 {
             font-size: 2rem;
@@ -57,7 +57,7 @@
     <h1>Password Generator</h1>
     <div class="main">
             <button type="button" id="myBtn">Generate Password</button>
-        <p id="password"></p>
+            <p id="password"></p>
     </div>
     <script>
         function generatePassword(length, includeUppercase, includeLowercase, includeNumber, includeSymbols) {
