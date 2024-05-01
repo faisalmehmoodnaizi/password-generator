@@ -14,40 +14,52 @@
         body {
             font-family: sans-serif;
         }
-       .main {
-        width: 50%;
-        margin: auto;
-        height: 70vh;
-        display: flex;
-        margin-top: 50px;
-        border-radius: 20px 20px 200px 200px;
-        box-shadow: 0 0 20px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0,0.24);
-        background-image: linear-gradient(200deg,blueviolet,aqua);
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
+        .main {
+            width: 50%;
+            margin: auto;
+            height: 70vh;
+            display: flex;
+            border-radius: 20px 20px 200px 200px;
+            box-shadow: 0 0 20px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0,0.24);
+            margin-top: 50px;
+            background-image: linear-gradient(200deg,blueviolet,aqua);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #myBtn{
+            margin-top: 1rem;
+            background-color: #fefefe;
+            border: none;
+            border-radius: 20px;
+            padding: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #000;
+            cursor: pointer;
         }
         h1 {
             font-size: 2rem;
             font-weight: 700;
             text-align: center;
+            padding-top: 50px;
         }
         p {
-            color: #fff;
-            margin-top: 1rem;
-            font-weight: 400;
             font-size: 1.5rem;
+            font-weight: 400;
             text-align: center;
-       }
+            margin-top: 1rem;
+            color: #fff;
+        }
     </style>
 </head>
 <body>
+    <h1>Password Generator</h1>
     <div class="main">
-        <h1>Password Generator</h1>
+            <button type="button" id="myBtn">Generate Password</button>
         <p id="password"></p>
     </div>
     <script>
-        // -----------FMnaizi-------------
         function generatePassword(length, includeUppercase, includeLowercase, includeNumber, includeSymbols) {
             const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
             const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
@@ -56,34 +68,34 @@
             let password = '';
             let allowedChars = '';
 
-            allowedChars += includeUppercase ? uppercaseChars: "";
-            allowedChars += includeLowercase? lowercaseChars: "";
-            allowedChars += includeNumber? numberChars: "";
-            allowedChars += includeSymbols? symbolChars: "";
+            allowedChars += includeUppercase ? uppercaseChars : "";
+            allowedChars += includeLowercase ? lowercaseChars : "";
+            allowedChars += includeNumber ? numberChars : "";
+            allowedChars += includeSymbols ? symbolChars : "";
 
             if (length <= 0) {
-                return `(Passord length must be at least 1)`;
+                return "Password length must be at least 1";
             }
             if (allowedChars.length === 0) {
-                return `(Must include at least one character type)`;
+                return "Must include at least one character type";
             }
             for (let i = 0; i < length; i++) {
                 password += allowedChars.charAt(Math.floor(Math.random() * allowedChars.length));
             }
 
-            document.getElementById("password").innerHTML = password;
             return password;
         }
-        // var password = generatePassword(12, true, true, true, true);
-        const passwordLength = 12;
-        const includeUppercase = true;
-        const includeLowercase = true;
-        const includeNumber = true;
-        const includeSymbols = true;
 
-        const password = generatePassword(passwordLength, includeUppercase, includeLowercase, includeNumber, includeSymbols);
-        console.log(`Generate Passord: ${password}`);
+        document.getElementById("myBtn").addEventListener("click", function() {
+            const passwordLength = 12;
+            const includeUppercase = true;
+            const includeLowercase = true;
+            const includeNumber = true;
+            const includeSymbols = true;
 
+            const password = generatePassword(passwordLength, includeUppercase, includeLowercase, includeNumber, includeSymbols);
+            document.getElementById("password").innerHTML = password;
+        });
     </script>
 </body>
 </html>
